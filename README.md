@@ -1,3 +1,5 @@
+## 🔐 Add a `.env` File
+
 ```env
 # .env file configuration
 
