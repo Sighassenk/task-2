@@ -1,3 +1,4 @@
+```env
 # .env file configuration
 
 MONGO_URI=YOUR_OWN_MONGOATLAS_URL
