@@ -19,7 +19,7 @@ exports.register = async (req, res) => {
 
     res.json({ message: "User registered successfully" });
   } catch (err) {
-    res.status(500).json(err);
+    res.status(500).json({message:"cnx safa 9asset"});
   }
 };
 
@@ -37,7 +37,7 @@ exports.login = async (req, res) => {
     if (!valid) return res.status(400).json({ message: "Invalid credentials" });
 
     // Create token
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET,{expiresIn:"30m"});
 
     res.json({ token,message:"Logged in successfully" });
   } catch (err) {
