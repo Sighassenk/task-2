@@ -44,3 +44,8 @@ exports.login = async (req, res) => {
     res.status(500).json(err);
   }
 };
+exports.logout = (req, res) => {
+  // Token is stored on client side. Backend only informs logout.
+  res.json({ message: "Logged out successfully" });
+};
+
