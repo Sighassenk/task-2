@@ -141,7 +141,7 @@
 											"top": 214,
 											"width": 99.97900390625,
 											"height": 13,
-											"text": "-_id: ObjectId",
+											"text": "+_id: ObjectId",
 											"horizontalAlignment": 0
 										},
 										{
@@ -383,7 +383,7 @@
 											"top": 262,
 											"width": 87,
 											"height": 13,
-											"text": "-_id: ObjectId",
+											"text": "+_id: ObjectId",
 											"horizontalAlignment": 0
 										},
 										{
@@ -864,7 +864,6 @@
 								"$ref": "AAAAAAGbDzU9UDuZ80M="
 							},
 							"name": "_id",
-							"visibility": "private",
 							"type": "ObjectId"
 						},
 						{
@@ -903,7 +902,6 @@
 								"$ref": "AAAAAAGbDznR9jvm1ak="
 							},
 							"name": "_id",
-							"visibility": "private",
 							"type": "ObjectId"
 						},
 						{
