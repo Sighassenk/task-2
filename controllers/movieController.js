@@ -3,11 +3,17 @@ const Movie = require("../models/movie");
 // CREATE MOVIE
 exports.createMovie = async (req, res) => {
   try {
-    const movie = await Movie.create({
+    const movieData = {
       name: req.body.name,
       description: req.body.description,
       user: req.user.id
-    });
+    };
+
+    if (req.file) {
+      movieData.image = req.file.path;
+    }
+
+    const movie = await Movie.create(movieData);
 
     res.json(movie);
   } catch (err) {
@@ -39,12 +45,18 @@ exports.getMovie = async (req, res) => {
 // UPDATE MY MOVIE
 exports.updateMovie = async (req, res) => {
   try {
+    const updateData = {
+      name: req.body.name,
+      description: req.body.description
+    };
+
+    if (req.file) {
+      updateData.image = req.file.path;
+    }
+
     const movie = await Movie.findOneAndUpdate(
       { _id: req.params.id, user: req.user.id },
-      {
-        name: req.body.name,
-        description: req.body.description
-      },
+      updateData,
       { new: true }
     );
 

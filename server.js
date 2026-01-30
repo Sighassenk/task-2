@@ -11,10 +11,12 @@ app.use(express.json());
 
 // Routes
 const authRoutes = require("./routes/auth");
-const movieRoutes = require("./routes/movies");  
+const movieRoutes = require("./routes/movies");
+
+app.use("/uploads", express.static("uploads"));
 
 app.use("/api", authRoutes);
-app.use("/api/movies", movieRoutes); 
+app.use("/api/movies", movieRoutes);
 
 // Basic route
 app.get("/", (req, res) => {
