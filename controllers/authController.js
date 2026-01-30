@@ -30,11 +30,11 @@ exports.login = async (req, res) => {
 
     // Check user
     const user = await User.findOne({ email });
-    if (!user) return res.status(400).json({ message: "Invalid credentials" });
+    if (!user) return res.status(400).json({ message: "Invalid email" });
 
     // Compare password
     const valid = await bcrypt.compare(password, user.password);
-    if (!valid) return res.status(400).json({ message: "Invalid credentials" });
+    if (!valid) return res.status(400).json({ message: "Invalid password" });
 
     // Create token
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET,{expiresIn:"30m"});
